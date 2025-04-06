@@ -4,6 +4,9 @@ from linebot.exceptions import (
 )
 def post_handler(handler,app):
     # 監聽所有來自 /callback 的 Post Request
+    @app.route("/")
+    def awake():
+        return "Alive"
     @app.route("/callback", methods=['POST'])
     def callback():
         # get X-Line-Signature header value
