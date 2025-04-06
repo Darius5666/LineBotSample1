@@ -66,7 +66,8 @@ class MessageSendHandler:
         return self.message
 
     def AddImage(self,img_url):
-        img_url = Modify(img_url)
+        if "drive" in img_url:
+            img_url = Modify(img_url)
         self.message.append(ImageSendMessage(original_content_url=img_url, preview_image_url=img_url))
         return self.message
 
@@ -86,7 +87,8 @@ class MessageSendHandler:
         return self.message
     
     def SendMessage(self):
-        self.line_bot_api.reply_message(self.reply_token, self.message)
+        if self.message != []:
+            self.line_bot_api.reply_message(self.reply_token, self.message)
 
 
 

@@ -5,12 +5,16 @@ from linebot import (
 )
 from linebot.models import *
 from MessageSendHandler import MessageSendHandler
+from EventDetect import event_detect
+
 
 def message_handler(handler,line_bot_api):
     @handler.add(MessageEvent, message=TextMessage)
     def handle_message(event):
+        reply = MessageSendHandler(event.reply_token,line_bot_api)
         event_text = event.message.text
-        
+        reply = event_detect(event_text,reply)
+        reply.SendMessage()
 
     @handler.add(PostbackEvent)
     def handle_postback(event):
