@@ -10,7 +10,7 @@ class SetBottomTemplate:
             alt_text = 'ButtonsTemplate',
             template = ButtonsTemplate(
                 thumbnail_image_url = Modify(img_url) if img_url is not None else None,
-
+                title = title,
                 text =  content,
                 actions = []
             )
