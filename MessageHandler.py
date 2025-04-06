@@ -14,7 +14,8 @@ def message_handler(handler,line_bot_api):
         reply = MessageSendHandler(event.reply_token,line_bot_api)
         event_text = event.message.text
         reply = event_detect(event_text,reply)
-        reply.SendMessage()
+        if reply != None:
+            reply.SendMessage()
 
     @handler.add(PostbackEvent)
     def handle_postback(event):
