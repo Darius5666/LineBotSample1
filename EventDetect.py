@@ -4,6 +4,7 @@ from UserHandler import get_user_profile
 def event_detect(input_text,reply,user_id):
     if 'whoami' in input_text:
         reply.AddText(f"{get_user_profile(user_id)}")
+        return reply
         
     if '今天星期幾' in input_text:
         reply.AddText(f"今天是{what_day_today()}")
