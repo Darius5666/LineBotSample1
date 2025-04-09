@@ -1,9 +1,9 @@
 from WhatDay import what_day_today
 import random
 from UserHandler import get_user_profile
-def event_detect(input_text,reply,user_id):
+def event_detect(input_text,reply,user_id,line_bot_api):
     if 'whoami' in input_text:
-        reply.AddText(f"{get_user_profile(user_id)}")
+        reply.AddText(f"{get_user_profile(user_id,line_bot_api)}")
         return reply
         
     if '今天星期幾' in input_text:
