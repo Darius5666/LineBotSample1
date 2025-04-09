@@ -3,7 +3,6 @@ from linebot import (
 )
 from linebot.models import *
 from GoogleDriveShareToHttps import Modify
-
 class SetBottomTemplate:
     def __init__(self,title,content,img_url=None):
         self.template = TemplateSendMessage(
@@ -89,6 +88,7 @@ class MessageSendHandler:
     def SendMessage(self):
         if self.message != []:
             self.line_bot_api.reply_message(self.reply_token, self.message)
+
 
 
 

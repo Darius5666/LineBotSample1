@@ -13,7 +13,8 @@ def message_handler(handler,line_bot_api):
     def handle_message(event):
         reply = MessageSendHandler(event.reply_token,line_bot_api)
         event_text = event.message.text
-        reply = event_detect(event_text,reply)
+        user_id = event.source.user_id
+        reply = event_detect(event_text,reply,user_id)
         if reply != None:
             reply.SendMessage()
 
