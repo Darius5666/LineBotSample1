@@ -6,8 +6,8 @@ from linebot.models import *
 from PostRequest import post_handler
 from MessageHandler import message_handler
 app = Flask(__name__)
-channel_token = 's0P/qx3ljDCsng1raHR+zZo15cgWDMDwzCquvvzLqkTpoLV3yru9g2WetZEyVpXs5h3w/ggfAQyKx3xrKKnVGP0Rt0hxE50zmaft4u0/xmCWZz+sRgfkaoUy8hKOZWPI8k8flOgsruQ8Ld/EwEtmFwdB04t89/1O/w1cDnyilFU='
-channel_secret ='f6dc6646262524d0135774409a2c4f66'
+channel_token = ''
+channel_secret =''
 # Channel Access Token
 line_bot_api = LineBotApi(channel_token)
 # Channel Secret
